@@ -1,14 +1,15 @@
 # High Availability in Managed Kubernetes Clusters
 
-## Overview
-High Availability (HA) is a feature in managed Kubernetes clusters that ensures the control plane remains accessible and resilient to failures. When enabled, the Kubernetes key–value store (etcd) and other control plane components run across multiple nodes instead of a single node.
+High Availability (HA) is a feature in managed Kubernetes clusters that ensures the control plane remains accessible and resilient to failures. When enabled, critical components such as the Kubernetes key–value store (etcd) are deployed across multiple nodes to improve fault tolerance.
 
-## What It Is
-In a standard (non-HA) setup, the Kubernetes control plane—including the etcd database—runs on a single node. This creates a potential single point of failure: if that node becomes unavailable, the cluster cannot be managed.
+## Understanding High Availability
+In a standard (non-HA) cluster setup, the Kubernetes control plane runs on a single node, consisting of the Kubernetes API server, key-value store, scheduler, and controller. This single node instance creates a potential single point of failure. If that node becomes unavailable, cluster management operations are disrupted.
 
-With High Availability enabled, the control plane is distributed across multiple nodes. The etcd key–value store runs as a clustered system, replicating data across these nodes and using quorum-based consensus to maintain consistency.
-
+With High Availability enabled, the control plane is distributed across multiple nodes. The etcd key–value store operates as a clustered system, replicating data between nodes and using quorum-based consensus to ensure consistency and reliability even if individual nodes fail.
 ## Architecture Diagram
+
+
+
 +----------------------+
               |    Load Balancer     |
               +----------+-----------+
@@ -39,16 +40,8 @@ When HA is enabled:
 - A load balancer distributes requests to the Kubernetes API servers
 - The system continues functioning as long as a majority (quorum) of nodes are available
 
-## How to Enable or Disable
+## Enable or Disable High Availability in Nebius AI Cloud
 - **Enable HA**: Select the “High Availability” option during cluster creation. This deploys multiple control plane nodes with replicated etcd.
 - **Disable HA**: Leave the option unselected. A single control plane node is used.
 
 Note: This setting is typically fixed at creation time.
-
-## Considerations
-- **Cost**: Higher due to additional nodes
-- **Reliability**: Eliminates single point of failure
-- **Use Case**: Recommended for production; optional for dev/test
-
-## Summary
-High Availability improves cluster resilience by distributing the control plane across multiple nodes, ensuring continuous operation even when individual components fail.
