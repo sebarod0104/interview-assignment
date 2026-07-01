@@ -1,5 +1,7 @@
 # High Availability in Managed Kubernetes Clusters
+This article describes the High Availability feature that Nebius AI Cloud provides for managed Kubernetes clusters.
 
+## What is High Availability?
 High Availability (HA) is a feature in managed Kubernetes clusters that ensures the control plane remains accessible and resilient to failures. When enabled, critical components such as the Kubernetes key–value store (etcd) are deployed across multiple [nodes][control-node] to improve fault tolerance.
 
 > **Note**: For more information on the control plane and how it manages Kubernetes cluster status, see [Kubernetes Control Plane Components][control-plane].
@@ -26,7 +28,11 @@ In the **Create Managed Kubernetes® cluster** dialog box, navigate to the **Con
 - **Enable HA**: Select the **High Availability** option during cluster creation. This deploys multiple control plane nodes with replicated etcd.
 - **Disable HA**: Leave the option unselected. A single control plane node is used.
 
+<p align="center">
+<img width="300" height="379" alt="Create Kubernetes Managed Cluster" src="https://github.com/user-attachments/assets/3113cde7-4c5a-4f5d-8969-22143ef91868">
+</p>
 
+> **Note**: This setting is typically configured during cluster creation and may not be editable after the cluster is deployed. Make sure to verify that before completing cluster creation.
 
 [control-plane]: https://kubernetes.io/docs/concepts/architecture/#control-plane-components "Control Plane Components"
 [etcd-db]: https://kubernetes.io/docs/concepts/architecture/#etcd "etcd Database Store"
