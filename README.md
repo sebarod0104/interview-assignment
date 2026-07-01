@@ -12,10 +12,14 @@ In a standard (non-HA) cluster setup, the Kubernetes control plane runs on a **s
 With High Availability enabled, 
 - The control plane is distributed across **multiple nodes**
 - The etcd key–value store operates as a clustered system, replicating data across multiple nodes
-- A load balancer distributes requests to the Kubernetes API servers
+- A load balancer distributes requests from worker nodes (Virtual Machines) to the Kubernetes API servers
 - The system continues functioning as long as a majority ([quorum][quorum-consensus]) of nodes are available
 
 This type of cluster architecture ensures consistency and reliability even if individual nodes fail.
+
+<p align="center">
+<img width="800" height="800" alt="High Availability Architecture" src="https://github.com/user-attachments/assets/af0fa49c-5b52-4710-b8be-912a1079468e">
+</p>
 
 ## Typical Use Cases of High Availability
 The primary purpose of HA is to improve the reliability and uptime of Kubernetes clusters. Some of the important use cases include:
@@ -29,7 +33,7 @@ In the **Create Managed Kubernetes® cluster** dialog box, navigate to the **Con
 - **Disable HA**: Leave the option unselected. A single control plane node is used.
 
 <p align="center">
-<img width="300" height="379" alt="Create Kubernetes Managed Cluster" src="https://github.com/user-attachments/assets/3113cde7-4c5a-4f5d-8969-22143ef91868">
+<img width="370" height="450" alt="Create Kubernetes Managed Cluster" src="https://github.com/user-attachments/assets/3113cde7-4c5a-4f5d-8969-22143ef91868">
 </p>
 
 > **Note**: This setting is typically configured during cluster creation and may not be editable after the cluster is deployed. Make sure to verify that before completing cluster creation.
