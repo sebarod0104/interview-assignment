@@ -22,10 +22,11 @@ The primary purpose of HA is to improve the reliability and uptime of Kubernetes
 - Systems that need continuous access to the Kubernetes API
 
 ## Enable or Disable High Availability in Nebius AI Cloud
+In the **Create Managed Kubernetes® cluster** dialog box, navigate to the **Control plane** section and perform one of the following actions based on your preference:
 - **Enable HA**: Select the **High Availability** option during cluster creation. This deploys multiple control plane nodes with replicated etcd.
 - **Disable HA**: Leave the option unselected. A single control plane node is used.
 
-Note: This setting is typically fixed at creation time.
+
 
 [control-plane]: https://kubernetes.io/docs/concepts/architecture/#control-plane-components "Control Plane Components"
 [etcd-db]: https://kubernetes.io/docs/concepts/architecture/#etcd "etcd Database Store"
