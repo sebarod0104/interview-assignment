@@ -18,7 +18,7 @@ With High Availability enabled,
 This type of cluster architecture ensures consistency and reliability even if individual nodes fail.
 
 <p align="center">
-<img width="800" height="800" alt="High Availability Architecture" src="https://github.com/user-attachments/assets/af0fa49c-5b52-4710-b8be-912a1079468e">
+<img width="800" height="800" alt="High Availability Architecture" src="images/High%20Availability%20Architecture.png">
 </p>
 
 ## Typical Use Cases of High Availability
@@ -33,7 +33,7 @@ In the **Create Managed Kubernetes® cluster** dialog box, navigate to the **Con
 - **Disable HA**: Leave the option unselected. A single control plane node is used.
 
 <p align="center">
-<img width="370" height="450" alt="Create Kubernetes Managed Cluster" src="https://github.com/user-attachments/assets/3113cde7-4c5a-4f5d-8969-22143ef91868">
+<img width="370" height="450" alt="Create Kubernetes Managed Cluster" src="images/Create%20Kubernetes%20Managed%20Cluster.png">
 </p>
 
 > **Note**: This setting is typically configured during cluster creation and may not be editable after the cluster is deployed. Make sure to verify that before completing cluster creation.
