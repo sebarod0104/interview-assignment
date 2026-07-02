@@ -2,9 +2,11 @@
 This article describes the High Availability feature that Nebius AI Cloud provides for managed Kubernetes clusters.
 
 ## What is High Availability?
-High Availability (HA) is a feature in managed Kubernetes clusters that ensures the control plane remains accessible and resilient to failures. When enabled, critical components such as the Kubernetes key–value store (etcd) are deployed across multiple [nodes][control-node] to improve fault tolerance.
+High Availability (HA) deploys multiple control plane nodes with replicated [etcd][etcd-db] data, providing redundancy and fault tolerance. If a control plane node fails, cluster management operations continue through the remaining nodes.
 
 > **Note**: For more information on the control plane and how it manages Kubernetes cluster status, see [Kubernetes Control Plane Components][control-plane].
+
+The HA feature in managed Kubernetes clusters ensures the control plane remains accessible and resilient to failures. When enabled, critical components such as the Kubernetes key–value store (etcd) are deployed across multiple [nodes][control-node] to improve fault tolerance.
 
 ## How High Availability Works
 In a standard (non-HA) cluster setup, the Kubernetes control plane runs on a **single node**, consisting of the Kubernetes API server, [key-value store][etcd-db], [scheduler][kube-scheduler], and [controller][kube-controller]. This node instance creates a potential single point of failure if it becomes unavailable, disrupting cluster management operations.
